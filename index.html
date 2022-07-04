@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<script crossorigin src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<link crossorigin rel="icon" href="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Fsocial-messaging-ui-color-shapes%2F128%2Fmusic-circle-blue-512.png&f=1&nofb=1" type="image/x-icon" crossorigin>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset = "utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+		<title>Good Music</title>
+	</head>
+	<body oncontextmenu = "return false;">
+        <div id = "fnaf">
+        <br>
+        <br>
+        <h2>Five Nights at Freddys</h2>
+		<audio id = "fnaf1" controls controlsList="nodownload noplaybackrate">
+            <source crossorigin src = "https://www.dropbox.com/s/y4es8orck9xxmg3/fnaf1.mp3?raw=1" />
+        </audio>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2>I can't fix you</h2>
+		<audio id = "fnaf2" controls controlsList="nodownload noplaybackrate">
+            <source src = "https://www.dropbox.com/s/1owf69xc15qvvoj/icantfixyou.mp3?raw=1" />
+        </audio>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2>You can't hide</h2>
+		<audio id = "fnaf3" controls controlsList="nodownload noplaybackrate">
+            <source src = "https://www.dropbox.com/s/jvlh7rtdn85mslz/youcanthide.mp3?raw=1" />
+        </audio>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <a onclick = "chill()">Chill Music</a>
+        <br>
+        <br>
+        <br>
+        </div>
+
+<!-- -------------------- -->
+
+        <div id = "chill">
+        <br>
+        <br>
+        <h2>No Mercy</h2>
+		<audio id = "chill1" controls controlsList="nodownload noplaybackrate">
+            <source src = "https://www.dropbox.com/s/k6yrnz2ed4lking/nomercy.mp3?raw=1" />
+        </audio>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2>Who am I now</h2>
+		<audio id = "chill2" controls controlsList="nodownload noplaybackrate">
+            <source src = "https://www.dropbox.com/s/ioe9tcvfmy59j2m/whoaminow.mp3?raw=1" />
+        </audio>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <h2>Graduation</h2>
+		<audio id = "chill3" controls controlsList="nodownload noplaybackrate">
+            <source src = "https://www.dropbox.com/s/q3usjyqa9uk4nf8/graduation.mp3?raw=1" />
+        </audio>
+        <br>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <a onclick = "fnaf()">FNAF Music</a>
+        <br>
+        <br>
+        <br>
+        </div>
+
+<!-- -------------------- -->
+
+        <script>
+		
+		Swal.fire('Click OK to listen to music.');
+		
+		/* ----------------- */
+		
+            const fnaf1 = document.getElementById ("fnaf1");
+            const fnaf2 = document.getElementById ("fnaf2");
+            const fnaf3 = document.getElementById ("fnaf3");
+
+/* ----------------- */
+
+            const chill1 = document.getElementById ("chill1");
+            const chill2 = document.getElementById ("chill2");
+            const chill3 = document.getElementById ("chill3");
+
+/* ----------------- */
+
+fnaf3.addEventListener("ended", function(){
+    fnaf3.currentTime = 0;
+    fnaf1.play();
+    fnaf2.pause();
+    fnaf3.pause();
+});
+
+fnaf1.addEventListener("ended", function(){
+    fnaf1.currentTime = 0;
+    fnaf1.pause();
+    fnaf2.play();
+    fnaf3.pause();
+});
+
+fnaf2.addEventListener("ended", function(){
+    fnaf2.currentTime = 0;
+    fnaf1.pause();
+    fnaf2.pause();
+    fnaf3.play();
+});
+
+/* ----------------- */
+
+chill1.addEventListener("ended", function(){
+    chill1.currentTime = 0;
+    chill1.pause();
+    chill2.play();
+    chill3.pause();
+});
+
+chill2.addEventListener("ended", function(){
+    chill2.currentTime = 0;
+    chill1.pause();
+    chill2.pause();
+    chill3.play();
+});
+
+chill3.addEventListener("ended", function(){
+    chill3.currentTime = 0;
+    chill1.play();
+    chill2.pause();
+    chill3.pause();
+});
+
+/* ----------------- */
+
+function chill () {
+    document.getElementById ("fnaf").style.display = "none";
+    document.getElementById ("chill").style.display = "block";
+}
+
+function fnaf () {
+    document.getElementById ("fnaf").style.display = "block";
+    document.getElementById ("chill").style.display = "none";
+}
+</script>
+<style>
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+	text-align:center;
+    font-family: 'Poppins', sans-serif;
+}
+
+#chill {
+    display:none;
+}
+
+audio::-webkit-media-controls-panel {
+    background-color:white;
+}
+
+audio {
+    font-family: 'Poppins', sans-serif;
+    outline:none;
+}
+
+hr {
+    background-color:gray;
+    border:gray solid 1px;
+}
+
+a {
+    cursor:pointer;
+}
+
+a:hover {
+    text-decoration:underline;
+}
+</style>
+	</body>
+</html>
